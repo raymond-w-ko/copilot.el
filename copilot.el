@@ -176,7 +176,7 @@ indentation offset."
                                   :notification-dispatcher #'copilot--handle-notification
                                   :process (make-process :name "copilot agent"
                                                          :command (list copilot-node-executable
-                                                                        (concat copilot--base-dir "/dist/agent.js"))
+                                                                        (concat (file-name-as-directory copilot--base-dir) "dist/agent.js"))
                                                          :coding 'utf-8-emacs-unix
                                                          :connection-type 'pipe
                                                          :stderr (get-buffer-create "*copilot stderr*")
